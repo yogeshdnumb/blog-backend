@@ -1,0 +1,8 @@
+extends layout
+block content
+  form(method="post")
+    label(for="username") Username
+      input#username(type='text' required placeholder='username'  name="username" value=username==undefined?'':username) 
+    label(for="password") Password
+      input#password(type='text' required placeholder='password' name="password" value=password==undefined?'':password)
+    button Submit 

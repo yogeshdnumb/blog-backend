@@ -1,0 +1,12 @@
+extends layout
+block content
+  form(method="post")
+    label(for="username") Username
+      input#username(type='text' required name='username' value=username==undefined?'':username) 
+    label(for="password") Password
+      input#password(type='text' required name='password' value=password==undefined?'':password)
+    //- label(for="confirm-password") Confirm Password
+    //-   input#confirm-password(type='text' required placeholder='confirm password' value=confirmPassword==undefined?'':confirmPassword)
+    //- label(for="college") College
+    //-   input#college(type='text' placeholder='college' value=college==undefined?'':college) 
+    button Submit 
