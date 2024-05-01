@@ -93,7 +93,7 @@ exports.login_post = [
           foundUser.refreshToken = refreshToken
           await foundUser.save()
 
-          res.cookie('rt', refreshToken, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true, SameSite: "None", secure: true }).status(200).json({ msg: "Pass match", username: foundUser.username, roles: foundUser.roles, accessToken })
+          res.cookie('rt', refreshToken, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true, SameSite: "none", secure: true }).status(200).json({ msg: "Pass match", username: foundUser.username, roles: foundUser.roles, accessToken })
 
 
         } else {
@@ -144,7 +144,7 @@ exports.logout_get = asyncHandler(async function (req, res, next) {
 
   // if rt not in db?
   const foundUser = await userModel.findOne({ refreshToken: refreshToken })
-  res.clearCookie("rt", { httpOnly: true, SameSite: "None", secure: true })
+  res.clearCookie("rt", { httpOnly: true, SameSite: "none", secure: true })
   if (!foundUser) {
     return res.send(204).json({ msg: "no rt in users" })
   }
