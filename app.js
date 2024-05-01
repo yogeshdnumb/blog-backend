@@ -14,7 +14,7 @@ const authMiddleware = require("./middlewares/authMiddleware");
 
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:5173', "http://192.168.29.83:5173"],
+  origin: ["https://yogi-blog-api.onrender.com/"],
   credentials: true,            //access-control-allow-credentials:true
   // optionSuccessStatus: 200
 }))
