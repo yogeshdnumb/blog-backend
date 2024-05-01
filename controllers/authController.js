@@ -93,7 +93,7 @@ exports.login_post = [
           foundUser.refreshToken = refreshToken
           await foundUser.save()
 
-          res.cookie('rt', refreshToken, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true, sameSite: "none", secure: true }).status(200).json({ msg: "Pass match", username: foundUser.username, roles: foundUser.roles, accessToken })
+          res.cookie('rt', refreshToken, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true, secure: true }).status(200).json({ msg: "Pass match", username: foundUser.username, roles: foundUser.roles, accessToken })
 
 
         } else {
