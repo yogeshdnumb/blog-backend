@@ -14,7 +14,8 @@ const authMiddleware = require("./middlewares/authMiddleware");
 
 const app = express();
 app.use(cors({
-  origin: ["https://yogi-blog.netlify.app/"],
+  origin: ["https://yogi-blog.netlify.app"],
+  credentials: true,            //access-control-allow-credentials:true
   credentials: true,            //access-control-allow-credentials:true
   // optionSuccessStatus: 200
 }))
